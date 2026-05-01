@@ -1,0 +1,3 @@
+Up: [[Art & Philosophy]]
+
+[[Logocentrism]]

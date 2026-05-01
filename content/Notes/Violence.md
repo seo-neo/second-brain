@@ -1,0 +1,7 @@
+Up: [[Art & Philosophy]]
+[[Hannah Arendt]]
+[[Power & Sexuality]]
+[[Biopolitics]]
+[[Animal Ethics]]
+[[Logocentrism]]
+[[Power dynamics]]

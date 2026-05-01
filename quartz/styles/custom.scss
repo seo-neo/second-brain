@@ -1,3 +1,90 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+:root {
+  --light: #e0ddd7;
+  --lightgray: #d1cdc5;
+  --gray: #7c7871;
+  --darkgray: #33312e;
+  --dark: #1a1918;
+  --secondary: #5d6356;
+  --tertiary: #a8a39a;
+  --bodyFont: "Noto Serif KR", serif;
+  --headerFont: "Pretendard", sans-serif;
+}
+
+/* 가장 바깥쪽 컨테이너의 제한을 제거 */
+.page {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 2rem !important; /* 양 끝 여백만 살짝 */
+}
+.center {
+  max-width: 100% !important; /* 본문 가로 제한 해제 */
+}
+
+/* 내부 레이아웃(center, header 등)의 800px 제한 해제 */
+.center, .page article, header, .header.stack {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* --- 헤더 위치 강제 교정 --- */
+/* 1. Quartz의 기본 레이아웃 그리드 시스템 무력화 */
+.page > .center {
+  display: block !important; /* 그리드 배치를 해제해서 너비 제한을 풉니다 */
+  width: 100% !important;
+}
+/* 2. 헤더를 감싸는 모든 부모 요소의 폭을 100%로 강제 */
+header, 
+.header, 
+.header.stack,
+nav {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+/* 3. 내부 요소 배치 (타이틀은 왼쪽, 검색창은 오른쪽 끝으로) */
+header {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important; /* 이 설정이 양 끝으로 밀어줍니다 */
+  align-items: center !important;
+  padding: 1.5rem 0 !important;
+}
+/* 4. '자연국가' 무드를 위한 상단 선 두께 조정 (선택사항) */
+header {
+  border-bottom: 1.5px solid var(--darkgray) !important;
+}
+
+/* 거대한 그래프: 네모 상자 탈출 */
+.graph-outer {
+  width: 100% !important;
+  height: 85vh !important; /* 화면 높이의 85% */
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important; /* 테두리 삭제 */
+}
+
+/* 그래프 내부의 실제 캔버스 크기 강제 확대 */
+.graph-outer > div {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* 본문 글자 및 불필요한 메타 데이터 숨기기 (그래프 집중) */
+.article-meta, .content-meta, .tags {
+  display: none !important;
+}
+
+body {
+  background-color: var(--light);
+  color: var(--darkgray);
+}
+
+.page-title a {
+  font-size: 1.8rem !important;
+  font-weight: 700;
+  color: var(--darkgray);
+  text-decoration: none;
+}
